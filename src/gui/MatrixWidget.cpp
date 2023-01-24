@@ -1342,7 +1342,7 @@ void MatrixWidget::mousePressEvent(QMouseEvent* event)
         int dtick= file->tick(150); // range
 
         for(int chan = 0; chan < 16; chan++) {
-            if(file->channel(chan)->visible())
+            if(file->channel(chan)->visible()) {
                 foreach (MidiEvent* event2, file->channel(chan)->eventMap()->values()) {
                     if(event2->midiTime() >= tick - dtick && event2->midiTime() < tick + dtick) {
 
@@ -1376,6 +1376,7 @@ void MatrixWidget::mousePressEvent(QMouseEvent* event)
                     }
 
                 }
+            }
         }
 
         if (enabled) {

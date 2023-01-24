@@ -778,7 +778,7 @@ void MainWindow::setFile(MidiFile* file)
                 VST_proc::VST_unload(i);
 
     }
-#endif
+
     if(skipVSTLoad) {
         // delete VST datas
 
@@ -816,6 +816,7 @@ void MainWindow::setFile(MidiFile* file)
         VST_proc::VST_LoadfromMIDIfile();
 
     }
+#endif
 
     emit channelWidget->WidgeUpdate(); // update octave for channel displayed
 
